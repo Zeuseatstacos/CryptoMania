@@ -1,14 +1,14 @@
 #ifndef CODESCRAMBLER_H
 #define CODESCRAMBLER_H
 
-#include <string>
+#include <string.h>
 
 class CodeScrambler {
 	//FUNCTIONS:
 	//Get a randomized amount of words between 1 and 5 from wordlist, dump it into secretphrase
 	public:
-		CodeScrambler();
-		void wordgrab();
+		CodeScrambler(int diff);
+		void wordgrab(int numwords);
 
 	private:
 		//VARIABLES
@@ -25,10 +25,7 @@ class CodeScrambler {
 		//Determines if player is timed or not
 		bool isTimed;
 
-		//The list of words to choose from, should be the same exact list each time
-		string wordlist[wordnum];
-
 		//The secret phrase the player has to decode
-		string secretphrase;
+		char *secretphrase;
 };
 #endif //CODESCRAMBLER_H
